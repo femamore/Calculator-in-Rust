@@ -9,5 +9,4 @@ description = "A simple calculator"
 
 [dependencies]
 clap = { version = "4.0.32", features = ["derive"] }
-num = "0.4.0"
 
