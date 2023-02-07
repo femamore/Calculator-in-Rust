@@ -29,7 +29,7 @@ fn main() {
      } 
 }
 
-fn parse_equation(equation: &str) -> i32 {
+fn parse_equation(equation: &str) -> f64 {
      let mut tokens = equation.split_whitespace();
      let mut result = parse_token(&mut tokens);
      
@@ -44,7 +44,7 @@ fn parse_equation(equation: &str) -> i32 {
      result
 }
 
-fn parse_token(tokens: &mut SplitWhitespace) -> i32 {
+fn parse_token(tokens: &mut SplitWhitespace) -> f64 {
      let mut result = parse_number(tokens);
 
      loop {
@@ -57,10 +57,11 @@ fn parse_token(tokens: &mut SplitWhitespace) -> i32 {
                _ => break,
           }
      }
+
      result
 }
 
-fn parse_number(tokens: &mut SplitWhitespace) -> i32 {
+fn parse_number(tokens: &mut SplitWhitespace) -> f64 {
      let token = tokens.next().unwrap();
      match token {
           "+" => parse_number(tokens),
